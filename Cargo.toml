@@ -1,0 +1,16 @@
+[package]
+name = "interoperability-rust"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+axum = "0.8"
+tokio = { version = "1.43", features = ["full"] }
+reqwest = { version = "0.13", features = ["json", "zstd", "gzip"] }
+tower = { version = "0.5", features = ["limit", "util", "buffer"] }
+tower-http = { version = "0.6", features = ["cors", "trace", "compression-full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+bytes = "1.9" # Added explicitly to fix the Bytes::new() error
